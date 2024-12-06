@@ -1,0 +1,1 @@
+"echo Config K3s cluster"
