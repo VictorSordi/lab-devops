@@ -1,0 +1,1 @@
+cat /nexus-data/admin.password
