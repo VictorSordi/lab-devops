@@ -9,9 +9,9 @@ echo << EOF >> /etc/rancher/k3s/registries.yaml
 mirrors:
   docker.io:
     endpoint:
-      - "http://192.168.56.3:8123"
+      - "http://192.168.56.7:8123"
 configs:
-  "192.168.56.3:8123":
+  "192.168.56.7:8123":
     auth:
       username: jenkins
       password: J3nk1ns@
