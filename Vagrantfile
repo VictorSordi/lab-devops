@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
         gitlab.vm.network "forwarded_port", guest: 8070, host: 8070
         gitlab.vm.provider "virtualbox" do |vb|
             vb.name = "GitLab"
-            vb.memory = "2048"
+            vb.memory = "4096"
             vb.cpus = "2"
         end
     end
@@ -48,6 +48,11 @@ Vagrant.configure("2") do |config|
         monitoring.vm.hostname = "Monitoring"
         monitoring.vm.provision "shell", path: "./Monitoring/provision-monitoring.sh"
         monitoring.vm.network "private_network", ip: "192.168.56.6"
+        monitoring.vm.provider "virtualbox" do |vb|
+            vb.name = "Monitoring"
+            vb.memory = "1024"
+            vb.cpus = "2"
+        end
     end
 
     config.vm.provision "shell", inline: "echo Config Nexus"
@@ -56,15 +61,25 @@ Vagrant.configure("2") do |config|
         nexus.vm.hostname = "Nexus"
         nexus.vm.provision "shell", path: "./Nexus/provision-nexus.sh"
         nexus.vm.network "private_network", ip: "192.168.56.7"
+        nexus.vm.provider "virtualbox" do |vb|
+            vb.name = "Nexus"
+            vb.memory = "1024"
+            vb.cpus = "2"
+        end
     end
 
     config.vm.provision "shell", inline: "echo Config K3s cluster"
     config.vm.define "k3s" do |k3s|
         k3s.vm.box = "bento/ubuntu-22.04"
-        k3s.vm.hostname = "k3s"
+        k3s.vm.hostname = "K3s"
         k3s.vm.provision "shell", path: "./K3s/provision-k3s.sh"
         k3s.vm.network "private_network", ip: "192.168.56.2"
         k3s.vm.network "forwarded_port", guest: 80, host: 8090
+        k3s.vm.provider "virtualbox" do |vb|
+            vb.name = "K3s"
+            vb.memory = "1024"
+            vb.cpus = "2"
+        end
     end
 
 end
