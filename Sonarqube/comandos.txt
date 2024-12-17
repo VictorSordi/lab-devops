@@ -1,0 +1,1 @@
+https://YOUR_JENKINS_URL/sonarqube-webhook/

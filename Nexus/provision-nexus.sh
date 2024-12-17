@@ -14,8 +14,7 @@ newgrp docker
 systemctl daemon-reload
 systemctl restart docker
 newgrp docker
-usermod -aG docker jenkins
 
 # Running Nexus container on docker
-echo ==== "Starting Nexus Repository" =======================================
-docker run -d -p 8091:8081 -p 8123:8123 --name nexus -v nexus-data:/nexus-data sonatype/nexus3
+#echo ==== "Starting Nexus Repository" =======================================
+# docker run -d -p 8091:8081 -p 8123:8123 --name nexus -v nexus-data:/nexus-data sonatype/nexus3

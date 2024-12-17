@@ -41,3 +41,8 @@ chown -R jenkins:jenkins /opt/sonar-scanner
 echo 'export PATH=$PATH:/opt/sonar-scanner/bin' | sudo tee -a /etc/profile
 curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 sudo apt install nodejs -y
+
+
+echo ==== "Installing sonar scanner" =======================================
+sudo apt update
+sudo apt install maven -y
