@@ -1,6 +1,6 @@
 #! /bin/bash
 echo ==== "Installing K3s cluster" =======================================
-curl -sfL https://get.k3s.io | sh 
+curl -sfL https://get.k3s.io | sh  -s - --cluster-init --tls-san 192.168.56.2 --node-ip 192.168.56.2 --node-external-ip 192.168.56.2
 apt install net-tools unzip git -y
 git clone https://github.com/ahmetb/kubectx /opt/kubectx
 ln -s /opt/kubectx/kubens /usr/local/bin/kubens
