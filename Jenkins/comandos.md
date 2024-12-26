@@ -43,3 +43,21 @@ docker login localhost:8123
 docker tag devops/app:latest localhost:8123/devops/app
 
 docker push localhost:8123/devops/app
+
+
+Trocar versão do java
+update-alternatives --config java
+
+
+
+npm adduser --registry=http://localhost:8123/repository/npm-public/
+npm publish <package_name> --registry=http://localhost:8123/repository/npm-public/
+npm login --registry=http://localhost:8123/repository/npm-public/
+npm config list
+echo -n "nexus_user:nexus_password" | base64 - saida adiciona no npmrc
+//nexus.example.com/repository/npm-public/:_authToken=<token>
+
+Exemplo
+registry=http://localhost:8091/repository/npm-public/
+//localhost:8091/repository/npm-public/:_auth="amVua2luczpKM25rMW5zQA=="
+//localhost:8091/repository/npm-public/:_authToken=NpmToken.04bc8815-3d62-30a4-9e8f-369c17ba9cd6
