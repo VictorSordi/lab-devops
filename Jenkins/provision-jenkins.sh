@@ -51,3 +51,7 @@ sudo apt install maven -y
 echo ==== "Installing Node" =======================================
 sudo apt update
 sudo apt install npm -y
+
+echo ==== "Installing Node" =======================================
+sudo apt update
+sudo apt install golang -y
