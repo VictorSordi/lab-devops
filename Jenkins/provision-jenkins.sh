@@ -43,6 +43,11 @@ curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 sudo apt install nodejs -y
 
 
-echo ==== "Installing sonar scanner" =======================================
+echo ==== "Installing Maven" =======================================
 sudo apt update
 sudo apt install maven -y
+
+
+echo ==== "Installing Node" =======================================
+sudo apt update
+sudo apt install npm -y
