@@ -45,7 +45,15 @@ sudo apt install nodejs -y
 
 echo ==== "Installing Maven" =======================================
 sudo apt update
-sudo apt install maven -y
+wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+tar -xvzf apache-maven-3.9.9-bin.tar.gz
+sudo mv apache-maven-3.9.9 /opt/maven
+cat << EOF >> ~/.bashrc
+export M2_HOME=/opt/maven
+export PATH=$M2_HOME/bin:$PATH
+EOF
+source ~/.bashrc
+
 
 
 echo ==== "Installing Node" =======================================
