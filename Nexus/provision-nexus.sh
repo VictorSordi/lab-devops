@@ -18,4 +18,4 @@ usermod -aG docker jenkins
 
 # Running Nexus container on docker
 echo ==== "Starting Nexus Repository" =======================================
-docker run -d -p 8081:8081 -p 8123:8123 --name nexus -v nexus-data:/nexus-data sonatype/nexus3
+docker run -d -p 8081:8081 -p 8123:8123 --name nexus -v nexus-data:/nexus-data klo2k/nexus3
